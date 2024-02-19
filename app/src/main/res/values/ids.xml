@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="dialogTitle" type="id" />
+    <item name="dialogDescription" type="id" />
+    <item name="dialogDatePicker" type="id" />
+    <item name="dialogTimePicker" type="id" />
+    <item name="dialogPositiveButton" type="id" />
+    <item name="dialogNegativeButton" type="id" />
+</resources>
