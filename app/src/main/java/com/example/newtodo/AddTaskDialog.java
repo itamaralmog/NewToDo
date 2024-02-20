@@ -54,14 +54,13 @@ public class AddTaskDialog extends AppCompatDialogFragment {
                     taskDescription = editTextDescription.getText().toString();
 
                     TaskData task = new TaskData("", taskDescription,
-                            taskDataDate.getYear(), taskDataDate.getMonth(),
+                            taskDataDate.getYear(), taskDataDate.getMonth() + 1,
                             taskDataDate.getDay(), taskDataTime.getHour(),
                             taskDataTime.getMinutes());
-                    int m = task.getMonth();
-                    task.setMonth(m+1);
+
                     Log.d("AddTaskDialod","AddTaskDialog" + " " + task.getMonth());
                     onSaveClickListener.onDialogPositiveClick(task);
-                    task.setMonth(m);
+
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                         setNotificationAlarm(task);
                     }
@@ -106,7 +105,7 @@ public class AddTaskDialog extends AppCompatDialogFragment {
     Calendar notification = Calendar.getInstance();
     Log.d("setNotificationAlarm time", "showNotification: enter to setNotification " + task.getDate());
     notification.set(Calendar.YEAR, task.getYear());
-    notification.set(Calendar.MONTH, task.getMonth());
+    notification.set(Calendar.MONTH, task.getMonth()-1);
     notification.set(Calendar.DAY_OF_MONTH, task.getDay());
     notification.set(Calendar.HOUR_OF_DAY, task.getHour());
     notification.set(Calendar.MINUTE, task.getMinutes());
